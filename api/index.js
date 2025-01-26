@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db.js';
 import userRouter from './routes/userRouter.js';
+import userProfileRouter from './routes/userProfileRouter.js';
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', userRouter)
-
+app.use('/api/user', userProfileRouter)
 
 const PORT = process.env.PORT || 3000
 
