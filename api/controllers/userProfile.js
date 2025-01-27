@@ -20,7 +20,6 @@ export const OwnProfile = async (req, res) => {
 }
 
 
-
 export const getAllUser = async (req, res) => {
     try {
         const allUser = await User.find().select('-password');
